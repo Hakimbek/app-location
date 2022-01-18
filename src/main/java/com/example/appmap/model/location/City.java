@@ -17,4 +17,8 @@ public class City {
 
     @Column(nullable = false, unique = true)
     private String city;
+
+    public City(String city) {
+        this.city = city;
+    }
 }

@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,4 +17,8 @@ public class Region {
 
     @Column(nullable = false, unique = true)
     private String region;
+
+    public Region(String region) {
+        this.region = region;
+    }
 }
