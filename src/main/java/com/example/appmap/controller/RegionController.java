@@ -25,10 +25,16 @@ public class RegionController {
     }
 
     // get region by id
-    @GetMapping("/{id}")
+    @GetMapping("/regionId/{id}")
     public ResponseEntity<Result> getById(@PathVariable Integer id) {
-        Result result = regionService.getById(id);
+        Result result = regionService.getByRegionId(id);
         return ResponseEntity.status(result.isSuccessful() ? 200 : 409).body(result);
+    }
+
+    // get by country id
+    @GetMapping("countryId/{id}")
+    public ResponseEntity<List<Region>> getByCountryId(@PathVariable Integer id) {
+        return ResponseEntity.ok().body(regionService.getByCountryId(id));
     }
 
     // delete region by id

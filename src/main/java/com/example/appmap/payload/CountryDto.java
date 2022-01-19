@@ -10,6 +10,8 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 @Data
 public class CountryDto {
+
     @NotBlank(message = "There was a problem with your country name")
     private String country;
+
 }

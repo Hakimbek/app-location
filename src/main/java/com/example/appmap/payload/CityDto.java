@@ -11,7 +11,10 @@ import javax.validation.constraints.NotBlank;
 @Data
 public class CityDto {
 
-    @NotBlank(message = "There was a problem with your city name.")
+    @NotBlank(message = "There is a problem with your city name")
     private String city;
+
+    @NotBlank(message = "There is a problem with your region id")
+    private Integer regionId;
 
 }

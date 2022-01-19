@@ -10,15 +10,15 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @Entity
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"region", "country_id"}))
 public class Region {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String region;
 
-    public Region(String region) {
-        this.region = region;
-    }
+    @ManyToOne(optional = false)
+    private Country country;
 }

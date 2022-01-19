@@ -10,6 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @Entity
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"city", "region_id"}))
 public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +19,6 @@ public class City {
     @Column(nullable = false, unique = true)
     private String city;
 
-    public City(String city) {
-        this.city = city;
-    }
+    @ManyToOne(optional = false)
+    private Region region;
 }

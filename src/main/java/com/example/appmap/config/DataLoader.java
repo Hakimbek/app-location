@@ -32,35 +32,7 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         if (initialMode.equals("always")) {
-            regionRepository.saveAll(new ArrayList<>(Arrays.asList(
-                    new Region("Xorazm"),
-                    new Region("Toshkent"),
-                    new Region("Samarqand"),
-                    new Region("Navoi"),
-                    new Region("Buxoro"),
-                    new Region("Sirdaryo"),
-                    new Region("Qashqdaryo"),
-                    new Region("Andijon"),
-                    new Region("Frag'ona"),
-                    new Region("Jizzax"),
-                    new Region("Namangan"),
-                    new Region("Surxondaryo"),
-                    new Region("Qoraqalpog'siton Res."),
-                    new Region("Toshkent vil.")
-            )));
 
-            countryRepository.save(new Country("Uzbekistan"));
-
-            cityRepository.saveAll(new ArrayList<>(Arrays.asList(
-                    new City("Toshkent"),
-                    new City("Samarqand"),
-                    new City("Namangan"),
-                    new City("Andijon"),
-                    new City("Buxoro"),
-                    new City("Nukus"),
-                    new City("Qarshi"),
-                    new City("Urganch")
-            )));
         }
     }
 
